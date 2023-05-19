@@ -28,6 +28,7 @@
     border-radius: 12px;
     cursor: pointer;
     transition: background-color .3s;
+    text-decoration: none;
 }
 .menu-button:hover {
     background-color: #d9e5e9;

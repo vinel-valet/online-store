@@ -1,0 +1,15 @@
+.error-container {
+    margin: 40px auto;
+    width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+}
+.error-container h3 {
+    margin: 0;
+}
+.error-img {
+    width: 300px;
+}
