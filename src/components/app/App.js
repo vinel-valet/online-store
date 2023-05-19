@@ -1,5 +1,6 @@
 import {Outlet} from "react-router-dom"
 import ShopHeader from "../shop-header/shop-header";
+import './App.css'
 
 function App () {
     return (
