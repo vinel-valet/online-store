@@ -1,11 +1,23 @@
 import ShopItem from "../shop-item/shop-item";
-import {data} from "../../services/services";
+import { data } from "../../services/services";
 
-export const fetchItems = () => {
-    let items = data()
-    let itemsArr = [<ShopItem paramsItem={items[0]}/>, <ShopItem paramsItem={items[1]}/>];
+export const fetchItems = async () => {
+    try {
+        let items = await data();
 
-    return {
-        items: itemsArr
-    };
+        let itemsArr = [
+            <ShopItem paramsItem={items[0]} />,
+            <ShopItem paramsItem={items[1]} />
+        ];
+
+        return {
+            items: itemsArr
+        };
+    } catch (error) {
+        console.error('Ошибка:', error);
+        return {
+            items: []
+        };
+    }
 }
+

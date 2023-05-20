@@ -5,7 +5,7 @@ function ShopList() {
     const itemsList = useLoaderData();
     let items = itemsList.items.map((item, index) => {
         return (
-            <NavLink key={index} className='item-cart' to={'/item/' + (index+1)}>
+            <NavLink key={index} className='item-cart' to={'/item/' + (item.props.paramsItem.id)}>
                 {item}
             </NavLink>
         );

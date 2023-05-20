@@ -1,14 +1,15 @@
 export const data = () => {
-    return [
-        {
-            name: 'BMW',
-            cost: '2000$',
-            id: 1
-        },
-        {
-            name: 'Audi',
-            cost: '5000$',
-            id: 2
+    return new Promise(async (resolve, reject) => {
+        try {
+            const response = await fetch('https://api.escuelajs.co/api/v1/products');
+            if (!response.ok) {
+                throw new Error('Ошибка при выполнении запроса');
+            }
+            const data = await response.json();
+            resolve(data);
+        } catch (error) {
+            console.error('Ошибка:', error);
+            reject(error);
         }
-    ]
+    });
 }
