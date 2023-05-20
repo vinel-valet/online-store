@@ -1,13 +1,17 @@
 import './shop-list.css'
-import ShopItem from "../shop-item/shop-item";
-import {NavLink} from "react-router-dom";
+import {NavLink, useLoaderData} from "react-router-dom";
 
-function ShopList () {
-  return (
-      <div className='shop-list-container'>
-          <NavLink className='item-cart' to='/:itemId'><ShopItem/></NavLink>
-      </div>
-  )
+function ShopList() {
+    const itemsList = useLoaderData();
+    let items = itemsList.items.map((item, index) => {
+        return (
+            <NavLink key={index} className='item-cart' to={'/item/' + (index+1)}>
+                {item}
+            </NavLink>
+        );
+    });
+
+    return <div className='shop-list-container'>{items}</div>;
 }
 
 export default ShopList;

@@ -7,6 +7,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ShopItemPage from "./components/shop-item-page/shop-item-page";
+import {fetchItemId} from "./components/fetch-item/fetch-item-id";
+import {fetchItems} from "./components/fetch-item/fetch-items";
 
 
 export const router = createBrowserRouter([
@@ -18,11 +20,13 @@ export const router = createBrowserRouter([
             {
                 element: <ShopList/>,
                 index: true,
+                loader: fetchItems
             },
-            /*{
+            {
                 element: <ShopItemPage/>,
-                path: '/:itemId'
-            },*/
+                path: 'item/:itemId',
+                loader: fetchItemId
+            },
             {
                 element: <Cart/>,
                 path: '/cart'
