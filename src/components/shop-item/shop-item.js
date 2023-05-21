@@ -1,9 +1,12 @@
 import './shop-item.css'
+import {useActions} from "../../hooks/useActions";
 
 function ShopItem ({paramsItem}) {
+    const {addItem} = useActions();
 
-    const handleChildClick = (e) => {
+    const addItemToCart = (e) => {
         e.preventDefault();
+        addItem(paramsItem.price)
     };
 
     return (
@@ -15,7 +18,7 @@ function ShopItem ({paramsItem}) {
                 <h3 className='shop-item-name'>Name: {paramsItem.title} </h3>
                 <p className='shop-item-cost'>Price: {paramsItem.price} </p>
                 <div className='shop-item-button-container'>
-                    <button onClick={handleChildClick} className='shop-item-button-add'>Add to cart</button>
+                    <button onClick={addItemToCart} className='shop-item-button-add'>Add to cart</button>
                 </div>
             </div>
         </div>
