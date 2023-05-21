@@ -1,3 +1,14 @@
+.shop-item-wrapper {
+    display: flex;
+    gap: 40px;
+}
+.shop-item-wrapper p {
+    margin-bottom: 12px;
+}
 .item-page-img {
     height: 300px;
+    border-radius: 16px;
+}
+.item-page-content {
+    max-width: 600px;
 }

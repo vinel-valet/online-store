@@ -4,10 +4,7 @@ import { data } from "../services/services";
 export const fetchItems = async () => {
     try {
         let items = await data();
-        let itemsArr = [
-            <ShopItem paramsItem={items[0]} />,
-            <ShopItem paramsItem={items[1]} />
-        ];
+        let itemsArr = items.map((item) => <ShopItem paramsItem={item} />);
 
         return {
             items: itemsArr

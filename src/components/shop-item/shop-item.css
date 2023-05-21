@@ -2,6 +2,7 @@
     border-radius: 12px;
     overflow: hidden;
     transition: background-color .3s;
+    border: 1px solid #B3BFCC;
 }
 .shop-item-container:hover {
     background-color: #d9e5e9;
@@ -9,20 +10,25 @@
 .shop-item-img {
     width: 100%;
 }
+.shop-item-name, .shop-item-container p {
+    margin: 0 0 12px;
+}
 .shop-item-content {
     padding: 20px;
 }
 .shop-item-button-container {
     display: flex;
     justify-content: center;
+    margin: 20px 0 16px;
 }
 .shop-item-button-add {
-    width: 300px;
+    width: 250px;
     height: 40px;
     border-radius: 8px;
     font-size: 16px;
     line-height: 24px;
     color: #002856;
+    background-color: #e08594;
 }
 h3, p, .shop-item-button-add {
     font-family: "Noto Sans";

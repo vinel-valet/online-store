@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {Provider} from "react-redux";
 
 import App from "./components/app/App";
+import {store} from "./store";
 import ErrorPage from "./components/error-page/error-page";
 import CartPage from "./components/cart-page/cart";
 import ShopItemPage from "./components/shop-item-page/shop-item-page";
@@ -36,6 +38,8 @@ export const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <Provider store={store}>
+            <RouterProvider router={router} />
+        </Provider>
     </React.StrictMode>
 );
