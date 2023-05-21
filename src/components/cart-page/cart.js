@@ -1,8 +1,8 @@
 
-function Cart() {
+function CartPage() {
     return (
         <div>Penis</div>
     )
 }
 
-export default Cart;
+export default CartPage;

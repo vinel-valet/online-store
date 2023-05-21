@@ -1,7 +1,7 @@
 import './shop-list.css'
 import {NavLink, useLoaderData} from "react-router-dom";
 
-function ShopList() {
+function ShopListPage() {
     const itemsList = useLoaderData();
     let items = itemsList.items.map((item, index) => {
         return (
@@ -14,4 +14,4 @@ function ShopList() {
     return <div className='shop-list-container'>{items}</div>;
 }
 
-export default ShopList;
+export default ShopListPage;

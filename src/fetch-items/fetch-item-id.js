@@ -1,4 +1,4 @@
-import {data} from "../../services/services";
+import {data} from "../services/services";
 
 export const fetchItemsId = async (id) => {
     try {
@@ -11,5 +11,4 @@ export const fetchItemsId = async (id) => {
     }
 }
 
-export const fetchItemId = ({params: {itemId}}) =>
-    fetchItemsId(itemId);
+export const fetchItemId = ({params: {itemId}}) => fetchItemsId(itemId);

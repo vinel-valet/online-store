@@ -1,15 +1,14 @@
-import App from "./components/app/App";
-import ErrorPage from "./components/error-page/error-page";
-import ShopList from "./components/shop-list/shop-list";
-import Cart from "./components/cart/cart";
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import ShopItemPage from "./components/shop-item-page/shop-item-page";
-import {fetchItemId} from "./components/fetch-item/fetch-item-id";
-import {fetchItems} from "./components/fetch-item/fetch-items";
 
+import App from "./components/app/App";
+import ErrorPage from "./components/error-page/error-page";
+import CartPage from "./components/cart-page/cart";
+import ShopItemPage from "./components/shop-item-page/shop-item-page";
+import ShopListPage from "./components/shop-list-page/shop-list";
+import {fetchItemId} from "./fetch-items/fetch-item-id";
+import {fetchItems} from "./fetch-items/fetch-items";
 
 export const router = createBrowserRouter([
     {
@@ -18,7 +17,7 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage/>,
         children: [
             {
-                element: <ShopList/>,
+                element: <ShopListPage/>,
                 index: true,
                 loader: fetchItems
             },
@@ -28,7 +27,7 @@ export const router = createBrowserRouter([
                 loader: fetchItemId
             },
             {
-                element: <Cart/>,
+                element: <CartPage/>,
                 path: '/cart'
             }
         ]

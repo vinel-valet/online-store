@@ -4,7 +4,6 @@ import ShopHeader from "../shop-header/shop-header";
 
 function ErrorPage() {
     const error = useRouteError()
-    console.log(error.data)
     return (
         <div>
             <ShopHeader/>
