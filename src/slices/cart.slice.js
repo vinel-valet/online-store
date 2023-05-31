@@ -15,19 +15,37 @@ const cartSlice = createSlice({
                 return item.id === payload.payload.id
             })
             if (newItem) {
-                newItem.price += payload.payload.price;
+                newItem.allPrice += payload.payload.price;
+                newItem.quantity ++;
              } else {
+                (payload.payload).quantity = 1;
+                (payload.payload).allPrice = payload.payload.price;
                 state.items.push(payload.payload)
             }
         },
         deleteItem: (state) => {
 
         },
-        incrementItem: (state) => {
-
+        incrementItem: (state, payload) => {
+            let newItem = state.items.find((item)=> {
+                return item.id === payload.payload.id
+            })
+            newItem.allPrice += payload.payload.price;
+            state.sumOfCart += payload.payload.price;
+            newItem.quantity ++;
         },
-        decrementItem: (state) => {
-
+        decrementItem: (state, payload) => {
+            let newItem = state.items.find((item)=> {
+                return item.id === payload.payload.id
+            })
+            if (newItem.quantity > 0) {
+                newItem.allPrice -= payload.payload.price;
+                state.sumOfCart -= payload.payload.price;
+                newItem.quantity --;
+                if (newItem.quantity === 0) {
+                    state.items = state.items.filter(obj => obj.id !== newItem.id)
+                }
+            }
         },
         deleteAllItems: (state) => {
             state.sumOfCart = 0;
