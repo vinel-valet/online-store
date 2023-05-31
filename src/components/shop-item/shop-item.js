@@ -6,7 +6,7 @@ function ShopItem ({paramsItem}) {
 
     const addItemToCart = (e) => {
         e.preventDefault();
-        addItem(paramsItem.price)
+        addItem(paramsItem)
     };
 
     return (
