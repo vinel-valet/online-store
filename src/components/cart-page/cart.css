@@ -1,6 +1,6 @@
 .cart-page-container {
     margin: 60px auto;
-    width: 600px;
+    width: 650px;
     gap: 30px;
     font-family: "Noto Sans";
     font-size: 24px;
@@ -24,9 +24,13 @@
 .cart-page-item div:first-child {
     width: 350px;
 }
-.cart-page-item div:last-child {
-    width: 100px;
-    text-align: end;
+.cart-page-price-and-trash {
+    width: 150px;
+    display: flex;
+    justify-content: end;
+}
+.cart-page-price-and-trash span {
+    margin-left: 10px;
 }
 .cart-page-quantity {
     width: 100px;
