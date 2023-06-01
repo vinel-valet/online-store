@@ -32,7 +32,7 @@ function CartPage() {
             </div>
         )
     } else {
-        return <div>Hello</div>
+        return <div className="cart-page-container">There is nothing here yet</div>
     }
 }
 
