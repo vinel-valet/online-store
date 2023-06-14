@@ -3,6 +3,8 @@
     overflow: hidden;
     transition: background-color .3s;
     border: 1px solid #B3BFCC;
+    height: 100%;
+    position: relative;
 }
 .shop-item-container:hover {
     background-color: #d9e5e9;
@@ -14,12 +16,15 @@
     margin: 0 0 12px;
 }
 .shop-item-content {
-    padding: 20px;
+    padding: 20px 20px 65px;
 }
 .shop-item-button-container {
     display: flex;
     justify-content: center;
-    margin: 20px 0 16px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
 }
 .shop-item-button-add {
     width: 250px;

@@ -12,3 +12,6 @@
 .item-page-content {
     max-width: 600px;
 }
+.item-page-content .shop-item-button-container {
+    position: unset;
+}
