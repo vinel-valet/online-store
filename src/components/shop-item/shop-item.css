@@ -29,6 +29,11 @@
     line-height: 24px;
     color: #002856;
     background-color: #e08594;
+    cursor: pointer;
+}
+.button-done {
+    background-color: mediumseagreen;
+    cursor: auto;
 }
 h3, p, .shop-item-button-add {
     font-family: "Noto Sans";

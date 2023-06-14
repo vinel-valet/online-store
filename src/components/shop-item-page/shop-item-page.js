@@ -1,10 +1,15 @@
 import './shop-item-page.css'
 import {useLoaderData} from "react-router-dom"
 import {useActions} from "../../hooks/useActions";
+import {useSelector} from "react-redux";
 
 function ShopItemPage () {
+    const stateItems = useSelector((state) => state.items);
     const {addItem} = useActions();
-    const item = useLoaderData()
+    const item = useLoaderData();
+    const itemFind = stateItems.find((thisItem)=> thisItem.id === item.id);
+
+
     return (
         <div>
             <div className='shop-item-wrapper'>
@@ -16,7 +21,10 @@ function ShopItemPage () {
                     <p>Description: {item.description} </p>
                     <p>Price: {item.price} </p>
                     <div className='shop-item-button-container'>
-                        <button onClick={()=> addItem(item)} className='shop-item-button-add'>Add to cart</button>
+                        {!itemFind ?
+                            <button onClick={()=> addItem(item)} className='shop-item-button-add'>Add to cart</button> :
+                            <button onClick={(e)=>e.preventDefault()} className='shop-item-button-add button-done'>Done, Thanks</button>
+                        }
                     </div>
                 </div>
             </div>

@@ -1,20 +1,21 @@
 import './shop-item.css'
 import {useActions} from "../../hooks/useActions";
 import {useSelector} from "react-redux";
-import {NavLink} from "react-router-dom";
 
 function ShopItem ({paramsItem}) {
     const items = useSelector((state) => state.items);
     const {addItem} = useActions()
+    let item = items.find((item)=> item.id === paramsItem.id);
 
-    let item = items.find((item)=> item.id === paramsItem.id)
+
     const addItemToCart = (e) => {
         e.preventDefault();
-        addItem(paramsItem)
+        addItem(paramsItem);
     };
 
-    let button = <button onClick={addItemToCart} className='shop-item-button-add'>Add to cart</button>;
-    let button2 = <div className='shop-item-button-add'>Go to cart</div>;
+    const buttonAdd = <button onClick={addItemToCart} className='shop-item-button-add'>Add to cart</button>;
+    const buttonDone = <button onClick={(e)=>e.preventDefault()} className='shop-item-button-add button-done'>Done, Thanks</button>;
+
 
     return (
         <div className='shop-item-container'>
@@ -25,7 +26,7 @@ function ShopItem ({paramsItem}) {
                 <h3 className='shop-item-name'>Name: {paramsItem.title} </h3>
                 <p className='shop-item-cost'>Price: {paramsItem.price} </p>
                 <div className='shop-item-button-container'>
-                    {item? button2 : button}
+                    {!item ? buttonAdd: buttonDone}
                 </div>
             </div>
         </div>
