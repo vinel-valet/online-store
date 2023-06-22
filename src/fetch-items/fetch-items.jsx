@@ -3,8 +3,8 @@ import { data } from "../services/services";
 
 export const fetchItems = async () => {
     try {
-        let items = await data();
-        let itemsArr = items.map((item) => <ShopItem paramsItem={item} />);
+        const items = await data();
+        const itemsArr = items.map((item) => <ShopItem paramsItem={item} />);
 
         return {
             items: itemsArr
@@ -15,4 +15,4 @@ export const fetchItems = async () => {
             items: []
         };
     }
-}
+};

@@ -1,12 +1,11 @@
-import './shop-item.css'
+import './shop-item.css';
 import {useActions} from "../../hooks/useActions";
 import {useSelector} from "react-redux";
 
 function ShopItem ({paramsItem}) {
     const items = useSelector((state) => state.items);
-    const {addItem} = useActions()
-    let item = items.find((item)=> item.id === paramsItem.id);
-
+    const {addItem} = useActions();
+    const item = items.find((item)=> item.id === paramsItem.id);
 
     const addItemToCart = (e) => {
         e.preventDefault();
@@ -14,7 +13,8 @@ function ShopItem ({paramsItem}) {
     };
 
     const buttonAdd = <button onClick={addItemToCart} className='shop-item-button-add'>Add to cart</button>;
-    const buttonDone = <button onClick={(e)=>e.preventDefault()} className='shop-item-button-add button-done'>Done, Thanks</button>;
+    const buttonDone = <button onClick={(e)=>e.preventDefault()}
+        className='shop-item-button-add button-done'>Done, Thanks</button>;
 
 
     return (
@@ -30,7 +30,7 @@ function ShopItem ({paramsItem}) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default ShopItem;

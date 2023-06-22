@@ -12,4 +12,4 @@ export const data = () => {
             reject(error);
         }
     });
-}
+};

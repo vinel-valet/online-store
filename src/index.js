@@ -8,7 +8,7 @@ import {store} from "./store";
 import ErrorPage from "./components/error-page/error-page";
 import CartPage from "./components/cart-page/cart";
 import ShopItemPage from "./components/shop-item-page/shop-item-page";
-import ShopListPage from "./components/shop-list-page/shop-list";
+import ShopListPage from "./components/shop-list-page/shop-list.tsx";
 import {fetchItemId} from "./fetch-items/fetch-item-id";
 import {fetchItems} from "./fetch-items/fetch-items";
 
@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
             }
         ]
     }
-])
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
